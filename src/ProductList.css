@@ -19,6 +19,7 @@ body {
     justify-content: space-between;
     align-items: center;
     font-size: 20px;
+    margin-bottom: 1rem;
 }
 
 .navbar .ul {
@@ -46,6 +47,7 @@ body {
     width: 100vw;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 .product-list {
     display: flex;
