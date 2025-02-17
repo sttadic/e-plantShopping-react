@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 function ProductList() {
 	const [showCart, setShowCart] = useState(false);
 	const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
-	const addedToCart = useSelector((state) => state.cart.items);
+	const addedToCart = useSelector((state) => state.cart);
 	const dispatch = useDispatch();
 
 	const plantsArray = [
@@ -303,6 +303,7 @@ function ProductList() {
 										strokeLinejoin="round"
 										strokeWidth="2"
 										id="mainIconPathAttribute"></path>
+                                        <text x="90" y="155" fontFamily="Verdana" fontSize="90" fill="white">{addedToCart.totalItems}</text>
 								</svg>
 							</h1>
 						</a>
@@ -324,7 +325,7 @@ function ProductList() {
 										<div>{plant.description}</div>
 										<div className="product-price">{plant.price}</div>
 										<button className="product-button" onClick={() => handleAddToCart(plant)} 
-                                            disabled={addedToCart && addedToCart.some(item => item.name === plant.name)}>
+                                            disabled={addedToCart.items && addedToCart.items.some(item => item.name === plant.name)}>
 											Add to Cart
 										</button>
 									</div>
